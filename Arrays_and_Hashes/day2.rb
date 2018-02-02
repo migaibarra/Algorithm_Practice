@@ -1,4 +1,6 @@
 def get_product_of_all_ints_except_at_index(int_array)
+  raise IndexError, "Getting the product of numbers at other indices requires at least 2 numbers" if int_array.length < 2
+  
   int_array.map.with_index do |x, i|
     if i == 0
       x = int_array[1..-1].reduce(&:*)
